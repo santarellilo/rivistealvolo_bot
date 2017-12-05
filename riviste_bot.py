@@ -1,7 +1,6 @@
 import requests
 import telepot
 from bs4 import BeautifulSoup
-import json
 
 def ottieniLink(link):
 	r = requests.get(link)
@@ -18,7 +17,6 @@ def on_chat_message(msg):
         	bot.sendMessage(chat_id, 'Scrivi cosa vuoi scaricare')
         else:
         	cerca(ricerca, chat_id)
-
 
 TOKEN = '505211509:AAG7Mi4Cw8ZGYYCDJ7U1lFvcP2cNVf3qc6c'
 
@@ -52,8 +50,6 @@ def cerca(query, chat_id):
 		for el in elementi:
 			giornali[el.text]=el.get('href')
 
-		#print 'Scaricato pagina ' + str(page_no)
-
 		page_no += 1 
 
 	risultati = {}
@@ -65,8 +61,6 @@ def cerca(query, chat_id):
 	print 'Ecco cosa ho trovato.. '
 
 	for ris in risultati:
-		#print ris
-		#print risultati[ris]
 		bot.sendMessage(chat_id, ris)
 		bot.sendMessage(chat_id, ottieniLink(risultati[ris]))
 
@@ -75,10 +69,3 @@ print 'Listening .. '
 import time 
 while 1:
 	time.sleep(10)
-#print "\n".join(s for s in giornali if sub.lower() in s.lower())
-
-#print json.dumps(giornali, indent=4)
-
-
-
-
