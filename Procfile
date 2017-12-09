@@ -1,1 +1,1 @@
-web: python riviste_bot.py
+bot: python3 bot.py

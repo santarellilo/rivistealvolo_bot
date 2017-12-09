@@ -1,0 +1,1 @@
+Bot made for capturing links of magazine looked for by user
