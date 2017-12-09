@@ -1,6 +1,6 @@
 import requests
 import telepot
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 
 def ottieniLink(link):
 	r = requests.get(link)
